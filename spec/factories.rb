@@ -31,4 +31,11 @@ FactoryGirl.define do
       npcs.each {|n| enc.npc_counts[n.id.to_s] = 3}
     }
   end
+
+  factory :insider_datum do
+    sequence(:original_id)
+    data_type ["monster", "class", "power"]
+    html "<p>Name of this thing</p><p>and some details too</p>"
+    ravenloft_version Ravenloft::VERSION
+  end
 end
